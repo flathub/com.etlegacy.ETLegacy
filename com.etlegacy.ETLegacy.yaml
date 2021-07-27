@@ -129,7 +129,7 @@ modules:
       - ln -s /app/extra/pak1.pk3 /app/bin/etmain/pak1.pk3
       - ln -s /app/extra/pak2.pk3 /app/bin/etmain/pak2.pk3
       # set basepath
-      - desktop-file-edit --set-key='Exec' --set-value='etl +set fs_basepath /app/bin +connect %u'  /app/share/applications/com.etlegacy.ETLegacy.desktop
+      - desktop-file-edit --set-key='Exec' --set-value='/app/bin/etl.sh +connect %u'  /app/share/applications/com.etlegacy.ETLegacy.desktop
     sources:
       - type: file
         url: https://www.etlegacy.com/download/file/257
@@ -172,5 +172,5 @@ modules:
       - type: script
         dest-filename: etl.sh
         commands:
-        - /app/bin/etl +set fs_basepath /app/bin "$@"
+        - /app/bin/etl +set fs_basepath /app/bin +set omnibot_path /app/bin/legacy/omni-bot "$@"
 
