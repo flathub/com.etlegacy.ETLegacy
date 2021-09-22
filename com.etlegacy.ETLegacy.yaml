@@ -129,7 +129,8 @@ modules:
       - ln -s /app/extra/pak1.pk3 /app/bin/etmain/pak1.pk3
       - ln -s /app/extra/pak2.pk3 /app/bin/etmain/pak2.pk3
       # set basepath
-      - desktop-file-edit --set-key='Exec' --set-value='/app/bin/etl.sh +connect %u'  /app/share/applications/com.etlegacy.ETLegacy.desktop
+      - desktop-file-edit --set-key='Exec' --set-value='/app/bin/etl.sh +connect %u' /app/share/applications/com.etlegacy.ETLegacy.desktop
+      - desktop-file-edit --set-key='PrefersNonDefaultGPU' --set-value='true' /app/share/applications/com.etlegacy.ETLegacy.desktop
     sources:
       - type: file
         url: https://www.etlegacy.com/download/file/257
