@@ -124,12 +124,12 @@ modules:
       - cp -r ./etlegacy-*-i386/legacy /app/bin/
       # Share sub folder
       - mkdir -p  /app/share/
-      - cp -r ./etlegacy-*-i386/share/applications /app/share/applications
-      - cp -r ./etlegacy-*-i386/share/doc /app/share/doc
-      - cp -r ./etlegacy-*-i386/share/icons /app/share/icons
-      - cp -r ./etlegacy-*-i386/share/licenses /app/share/licenses
-      - cp -r ./etlegacy-*-i386/share/man /app/share/man
-      - cp -r ./etlegacy-*-i386/share/metainfo /app/share/metainfo
+      - cp -r ./etlegacy-*-i386/applications /app/share/applications
+      - cp -r ./etlegacy-*-i386/doc /app/share/doc
+      - cp -r ./etlegacy-*-i386/icons /app/share/icons
+      - cp -r ./etlegacy-*-i386/licenses /app/share/licenses
+      - cp -r ./etlegacy-*-i386/man /app/share/man
+      - cp -r ./etlegacy-*-i386/metainfo /app/share/metainfo
       # Symlinks for Splash Damage resources
       - mkdir -p  /app/extra/legacy/
       - ln -s /app/extra/legacy/ /app/bin/legacy
