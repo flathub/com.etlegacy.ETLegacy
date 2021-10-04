@@ -123,6 +123,7 @@ modules:
       - cp -r ./etlegacy-*-i386/etmain /app/bin/
       - cp -r ./etlegacy-*-i386/legacy /app/bin/
       # Share sub folder
+      - mkdir -p  /app/share/
       - cp -r ./etlegacy-*-i386/share/applications /app/share/applications
       - cp -r ./etlegacy-*-i386/share/doc /app/share/doc
       - cp -r ./etlegacy-*-i386/share/icons /app/share/icons
