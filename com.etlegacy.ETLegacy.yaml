@@ -133,6 +133,9 @@ modules:
       - cp -r ./etlegacy-*-i386/licenses /app/share/licenses
       - cp -r ./etlegacy-*-i386/man /app/share/man
       - cp -r ./etlegacy-*-i386/metainfo /app/share/metainfo
+      - cp -r ./etlegacy-*-i386/mime /app/share/mime
+      # Rename mime-type controller
+      - mv /app/share/mime/packages/etlegacy.xml /app/share/mime/packages/com.etlegacy.ETLegacy.xml
       # Symlinks for Splash Damage resources
       - mkdir -p  /app/extra/legacy/
       - ln -s /app/extra/legacy/ /app/bin/legacy
@@ -146,16 +149,16 @@ modules:
       - desktop-file-edit --set-key='PrefersNonDefaultGPU' --set-value='true' /app/share/applications/com.etlegacy.ETLegacy.desktop
     sources:
       - type: file
-        url: https://www.etlegacy.com/download/file/318
-        sha256: e6540d8fd9ab086242b1d4d232b04904de6c9284d4a3d6998db12d6f3a1255fc
+        url: https://www.etlegacy.com/download/file/330
+        sha256: cf663200d7cb3c8b08e93d277f5839074891ebedd1b31b19d1790843aedfaf67
         dest-filename: etl.tar.gz
       # This is just a canary. We don't build from source because that's not reasonable in our
       # case but we can use this repository to warn us when there is a release.
       - type: git
         url: https://github.com/etlegacy/etlegacy
         disable-submodules: true
-        commit: a41f32a445df74a338e69a515786c10ad1ebdd03
-        tag: v2.78.0
+        commit: f248a7014a00c052aff7484450196fcb626370ae
+        tag: v2.78.1
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+)$
