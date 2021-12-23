@@ -149,16 +149,16 @@ modules:
       - desktop-file-edit --set-key='PrefersNonDefaultGPU' --set-value='true' /app/share/applications/com.etlegacy.ETLegacy.desktop
     sources:
       - type: file
-        url: https://www.etlegacy.com/download/file/330
-        sha256: cf663200d7cb3c8b08e93d277f5839074891ebedd1b31b19d1790843aedfaf67
+        url: https://www.etlegacy.com/download/file/346
+        sha256: b853b4671fca69aaeca94c6ed427459d34587a1b7173bdc1e029f30634b6ffc1
         dest-filename: etl.tar.gz
       # This is just a canary. We don't build from source because that's not reasonable in our
       # case but we can use this repository to warn us when there is a release.
       - type: git
         url: https://github.com/etlegacy/etlegacy
         disable-submodules: true
-        commit: f248a7014a00c052aff7484450196fcb626370ae
-        tag: v2.78.1
+        commit: db77fde9e2708872de19151801ffa3b62a9beca6
+        tag: v2.79.0
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+)$
