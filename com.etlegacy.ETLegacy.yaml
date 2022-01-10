@@ -145,8 +145,8 @@ modules:
       # set basepath
       - desktop-file-edit --set-key='Exec' --set-value='/app/bin/etl.sh +connect %u' /app/share/applications/com.etlegacy.ETLegacy.desktop
       # Submitted upstream:
-      # https://github.com/etlegacy/etlegacy/pull/1764
-      - desktop-file-edit --set-key='PrefersNonDefaultGPU' --set-value='true' /app/share/applications/com.etlegacy.ETLegacy.desktop
+      # https://github.com/etlegacy/etlegacy/pull/1882
+      - desktop-file-edit --set-key='Keywords' --set-value='team-based;multiplayer;tactical;WWII;enemy;territory;etl;etlegacy;' /app/share/applications/com.etlegacy.ETLegacy.desktop
     sources:
       - type: file
         url: https://www.etlegacy.com/download/file/346
