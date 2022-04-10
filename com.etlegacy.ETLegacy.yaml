@@ -149,16 +149,16 @@ modules:
       - desktop-file-edit --set-key='Keywords' --set-value='team-based;multiplayer;tactical;WWII;enemy;territory;etl;etlegacy;' /app/share/applications/com.etlegacy.ETLegacy.desktop
     sources:
       - type: file
-        url: https://www.etlegacy.com/download/file/346
-        sha256: b853b4671fca69aaeca94c6ed427459d34587a1b7173bdc1e029f30634b6ffc1
+        url: https://www.etlegacy.com/download/file/385
+        sha256: cff671773fc498694c7be3c6a7d762e19eed8141c57fae903ec15980634e5dbd
         dest-filename: etl.tar.gz
       # This is just a canary. We don't build from source because that's not reasonable in our
       # case but we can use this repository to warn us when there is a release.
       - type: git
         url: https://github.com/etlegacy/etlegacy
         disable-submodules: true
-        commit: db77fde9e2708872de19151801ffa3b62a9beca6
-        tag: v2.79.0
+        commit: 38c033512b4ea5ebcd441f3f165ba8aa2019f730
+        tag: v2.80.0
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+)$
