@@ -143,22 +143,20 @@ modules:
       - ln -s /app/extra/pak1.pk3 /app/bin/etmain/pak1.pk3
       - ln -s /app/extra/pak2.pk3 /app/bin/etmain/pak2.pk3
       # set basepath
-      - desktop-file-edit --set-key='Exec' --set-value='/app/bin/etl.sh +connect %u' /app/share/applications/com.etlegacy.ETLegacy.desktop
-      # Submitted upstream:
-      # https://github.com/etlegacy/etlegacy/pull/1882
-      - desktop-file-edit --set-key='Keywords' --set-value='team-based;multiplayer;tactical;WWII;enemy;territory;etl;etlegacy;' /app/share/applications/com.etlegacy.ETLegacy.desktop
+      - desktop-file-edit --set-key='Exec' --set-value='/app/bin/etl.sh +connect %u'
+        /app/share/applications/com.etlegacy.ETLegacy.desktop
     sources:
       - type: file
-        url: https://www.etlegacy.com/download/file/385
-        sha256: cff671773fc498694c7be3c6a7d762e19eed8141c57fae903ec15980634e5dbd
+        url: https://www.etlegacy.com/download/file/398
+        sha256: 19ebae466d0655ea08c5180d33283af280af04f9007d52320337fb689c70657e
         dest-filename: etl.tar.gz
       # This is just a canary. We don't build from source because that's not reasonable in our
       # case but we can use this repository to warn us when there is a release.
       - type: git
         url: https://github.com/etlegacy/etlegacy
         disable-submodules: true
-        commit: 38c033512b4ea5ebcd441f3f165ba8aa2019f730
-        tag: v2.80.0
+        commit: 418d530867f9b3f81916ade85b1c1a659d6db717
+        tag: v2.80.1
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+)$
@@ -199,5 +197,6 @@ modules:
       - type: script
         dest-filename: etl.sh
         commands:
-        - /app/bin/etl +set fs_basepath /app/bin +set omnibot_path /app/bin/legacy/omni-bot "$@"
+          - /app/bin/etl +set fs_basepath /app/bin +set omnibot_path /app/bin/legacy/omni-bot
+            "$@"
 
