@@ -145,14 +145,10 @@ modules:
       # set basepath
       - desktop-file-edit --set-key='Exec' --set-value='/app/bin/etl.sh +connect %u'
         /app/share/applications/com.etlegacy.ETLegacy.desktop
-      # Submitted upstream:
-      # https://github.com/etlegacy/etlegacy/pull/1882
-      - desktop-file-edit --set-key='Keywords' --set-value='team-based;multiplayer;tactical;WWII;enemy;territory;etl;etlegacy;'
-        /app/share/applications/com.etlegacy.ETLegacy.desktop
     sources:
       - type: file
-        url: https://www.etlegacy.com/download/file/385
-        sha256: cff671773fc498694c7be3c6a7d762e19eed8141c57fae903ec15980634e5dbd
+        url: https://www.etlegacy.com/download/file/398
+        sha256: 19ebae466d0655ea08c5180d33283af280af04f9007d52320337fb689c70657e
         dest-filename: etl.tar.gz
       # This is just a canary. We don't build from source because that's not reasonable in our
       # case but we can use this repository to warn us when there is a release.
