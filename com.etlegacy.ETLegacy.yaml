@@ -147,8 +147,8 @@ modules:
         /app/share/applications/com.etlegacy.ETLegacy.desktop
     sources:
       - type: file
-        url: https://www.etlegacy.com/download/file/398
-        sha256: 19ebae466d0655ea08c5180d33283af280af04f9007d52320337fb689c70657e
+        url: https://www.etlegacy.com/download/file/410
+        sha256: 1da67661fd620ae1a75dcec34d4598708a180f431d8c31b87995c998a0216062
         dest-filename: etl.tar.gz
       # This is just a canary. We don't build from source because that's not reasonable in our
       # case but we can use this repository to warn us when there is a release.
