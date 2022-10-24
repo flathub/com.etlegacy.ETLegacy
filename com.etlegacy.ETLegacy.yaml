@@ -2,7 +2,6 @@ app-id: com.etlegacy.ETLegacy
 runtime: org.freedesktop.Platform
 runtime-version: '22.08'
 sdk: org.freedesktop.Sdk
-branch: stable
 
 # 64bit is currently unfunctional. Upsteam is aware of this,
 # but there is no definitive solution as of yet.
