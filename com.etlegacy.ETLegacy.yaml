@@ -154,8 +154,8 @@ modules:
       - type: git
         url: https://github.com/etlegacy/etlegacy
         disable-submodules: true
-        commit: f56e3f3c570129d44c672a526dd4fb6a4d68d5d7
-        tag: v2.80.2
+        commit: ba7786a59917c39099c32f6da6f8eb55ba3163e6
+        tag: v2.81.0
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+)$
