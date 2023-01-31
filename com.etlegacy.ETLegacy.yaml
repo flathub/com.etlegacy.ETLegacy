@@ -13,6 +13,10 @@ sdk: org.freedesktop.Sdk
 # means that those mods will forever remain closed source, 32bit only.
 # Good hope is that overtime they will die, but until then, we better stick
 # to 32bit
+#
+# With the release of 2.81.0, they made a specific effort to flag all binaries and
+# executables as x86 (32bit) which is a little redundent for Flatpak. As such,
+# I've removed all these extra pre- and post-fixes.
 
 command: etl.sh
 rename-icon: etl
@@ -118,8 +122,10 @@ modules:
     buildsystem: simple
     build-commands:
       - tar -xf ./etl.tar.gz
-      - install -Dm744 ./etlegacy-*-i386/etl -t /app/bin/
-      - install -Dm744 ./etlegacy-*-i386/etlded -t /app/bin/
+      - install -Dm744 ./etlegacy-*-i386/etl.x86 -t /app/bin/
+      - mv /app/bin/etl.x86 /app/bin/etl
+      - install -Dm744 ./etlegacy-*-i386/etlded.x86 -t /app/bin/
+      - mv /app/bin/etlded.x86 /app/bin/etlded
       - install -Dm744 ./etlegacy-*-i386/librenderer_opengl1_i386.so -t /app/bin/
       # Game assets
       - cp -r ./etlegacy-*-i386/etmain /app/bin/
@@ -141,21 +147,22 @@ modules:
       - ln -s /app/extra/pak0.pk3 /app/bin/etmain/pak0.pk3
       - ln -s /app/extra/pak1.pk3 /app/bin/etmain/pak1.pk3
       - ln -s /app/extra/pak2.pk3 /app/bin/etmain/pak2.pk3
-      # set basepath
-      - desktop-file-edit --set-key='Exec' --set-value='/app/bin/etl.sh +connect %u'
-        /app/share/applications/com.etlegacy.ETLegacy.desktop
+      # set basepath, and change name to be generic
+      - mv /app/share/applications/com.etlegacy.ETLegacy.x86.desktop /app/share/applications/com.etlegacy.ETLegacy.desktop
+      - "desktop-file-edit --set-key='Exec' --set-value='/app/bin/etl.sh +connect %u' /app/share/applications/com.etlegacy.ETLegacy.desktop"        
+      - "desktop-file-edit --set-key='Name' --set-value='ET: Legacy' /app/share/applications/com.etlegacy.ETLegacy.desktop"
     sources:
       - type: file
-        url: https://www.etlegacy.com/download/file/410
-        sha256: 1da67661fd620ae1a75dcec34d4598708a180f431d8c31b87995c998a0216062
+        url: https://www.etlegacy.com/download/file/539
+        sha256: fa467a8b17a8242e25814db981fad4d78fbf39d7bec4937f74aab46603e7dabb
         dest-filename: etl.tar.gz
       # This is just a canary. We don't build from source because that's not reasonable in our
       # case but we can use this repository to warn us when there is a release.
       - type: git
         url: https://github.com/etlegacy/etlegacy
         disable-submodules: true
-        commit: f56e3f3c570129d44c672a526dd4fb6a4d68d5d7
-        tag: v2.80.2
+        commit: ba7786a59917c39099c32f6da6f8eb55ba3163e6
+        tag: v2.81.0
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+)$
@@ -196,6 +203,4 @@ modules:
       - type: script
         dest-filename: etl.sh
         commands:
-          - /app/bin/etl +set fs_basepath /app/bin +set omnibot_path /app/bin/legacy/omni-bot
-            "$@"
-
+          - /app/bin/etl +set fs_basepath /app/bin +set omnibot_path /app/bin/legacy/omni-bot "$@"
