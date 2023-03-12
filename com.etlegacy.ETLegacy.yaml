@@ -148,7 +148,7 @@ modules:
       - ln -s /app/extra/pak1.pk3 /app/bin/etmain/pak1.pk3
       - ln -s /app/extra/pak2.pk3 /app/bin/etmain/pak2.pk3
       # set basepath, and change name to be generic
-      - mv /app/share/applications/com.etlegacy.ETLegacy.x86.desktop /app/share/applications/com.etlegacy.ETLegacy.desktop
+      - mv /app/share/applications/com.etlegacy.ETLegacy.i386.desktop /app/share/applications/com.etlegacy.ETLegacy.desktop
       - "desktop-file-edit --set-key='Exec' --set-value='/app/bin/etl.sh +connect %u' /app/share/applications/com.etlegacy.ETLegacy.desktop"        
       - "desktop-file-edit --set-key='Name' --set-value='ET: Legacy' /app/share/applications/com.etlegacy.ETLegacy.desktop"
     sources:
