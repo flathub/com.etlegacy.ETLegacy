@@ -153,16 +153,16 @@ modules:
       - "desktop-file-edit --set-key='Name' --set-value='ET: Legacy' /app/share/applications/com.etlegacy.ETLegacy.desktop"
     sources:
       - type: file
-        url: https://www.etlegacy.com/download/file/539
-        sha256: fa467a8b17a8242e25814db981fad4d78fbf39d7bec4937f74aab46603e7dabb
+        url: https://www.etlegacy.com/download/file/554
+        sha256: ed8b4abb6e3cd13c1a3af2d7e4526ede260abee4afbdc6838210d742d98bdab5
         dest-filename: etl.tar.gz
       # This is just a canary. We don't build from source because that's not reasonable in our
       # case but we can use this repository to warn us when there is a release.
       - type: git
         url: https://github.com/etlegacy/etlegacy
         disable-submodules: true
-        commit: ba7786a59917c39099c32f6da6f8eb55ba3163e6
-        tag: v2.81.0
+        commit: 956269f4c13ebe31ba2a0f0b805588383209bd5b
+        tag: v2.81.1
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+)$
