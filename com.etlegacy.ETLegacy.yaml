@@ -122,10 +122,10 @@ modules:
     buildsystem: simple
     build-commands:
       - tar -xf ./etl.tar.gz
-      - install -Dm744 ./etlegacy-*-i386/etl.x86 -t /app/bin/
-      - mv /app/bin/etl.x86 /app/bin/etl
-      - install -Dm744 ./etlegacy-*-i386/etlded.x86 -t /app/bin/
-      - mv /app/bin/etlded.x86 /app/bin/etlded
+      - install -Dm744 ./etlegacy-*-i386/etl.i386 -t /app/bin/
+      - mv /app/bin/etl.i386 /app/bin/etl
+      - install -Dm744 ./etlegacy-*-i386/etlded.i386 -t /app/bin/
+      - mv /app/bin/etlded.i386 /app/bin/etlded
       - install -Dm744 ./etlegacy-*-i386/librenderer_opengl1_i386.so -t /app/bin/
       # Game assets
       - cp -r ./etlegacy-*-i386/etmain /app/bin/
