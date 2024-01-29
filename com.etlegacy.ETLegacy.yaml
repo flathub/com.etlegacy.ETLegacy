@@ -152,6 +152,9 @@ modules:
       - mv /app/share/applications/com.etlegacy.ETLegacy.i386.desktop /app/share/applications/com.etlegacy.ETLegacy.desktop
       - "desktop-file-edit --set-key='Exec' --set-value='/app/bin/etl.sh +connect %u' /app/share/applications/com.etlegacy.ETLegacy.desktop"        
       - "desktop-file-edit --set-key='Name' --set-value='ET: Legacy' /app/share/applications/com.etlegacy.ETLegacy.desktop"
+      # Mesa Zink messing about
+      - "echo -e '\n[Desktop Action zink]\nName=Vulkan (Mesa 3D Zink)\nExec=env MESA_LOADER_DRIVER_OVERRIDE=zink /app/bin/etl.sh +connect %u' >> /app/share/applications/com.etlegacy.ETLegacy.desktop"
+      - "desktop-file-edit --set-key='Actions' --set-value='zink' /app/share/applications/com.etlegacy.ETLegacy.desktop"
     sources:
       - type: file
         url: https://www.etlegacy.com/download/file/554
