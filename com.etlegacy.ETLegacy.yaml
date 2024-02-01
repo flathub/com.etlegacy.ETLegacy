@@ -193,6 +193,9 @@ modules:
       # Official proprietary files
       - type: extra-data
         url: https://cdn.splashdamage.com/downloads/games/wet/et260b.x86_full.zip
+        url-mirrors:
+          - https://filebase.trackbase.net/et/full/et260b.x86_full.zip
+          - https://elitearmy.gg/et/et260b.x86_full.zip
         sha256: 2a8fef8e8558efffcad658bb9a8b12df8740418b3514142350eba3b7641eb3e0
         size: 275647724
         filename: enemy-territory.zip
