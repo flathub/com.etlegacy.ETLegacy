@@ -210,4 +210,4 @@ modules:
       - type: script
         dest-filename: etl.sh
         commands:
-          - /app/bin/etl +set fs_basepath /app/bin +set omnibot_path /app/bin/legacy/omni-bot "$@"
+          - exec /app/bin/etl +set fs_basepath /app/bin +set omnibot_path /app/bin/legacy/omni-bot "$@"
