@@ -150,23 +150,28 @@ modules:
       - ln -s /app/extra/pak2.pk3 /app/bin/etmain/pak2.pk3
       # set basepath, and change name to be generic
       - mv /app/share/applications/com.etlegacy.ETLegacy.i386.desktop /app/share/applications/com.etlegacy.ETLegacy.desktop
-      - "desktop-file-edit --set-key='Exec' --set-value='/app/bin/etl.sh +connect %u' /app/share/applications/com.etlegacy.ETLegacy.desktop"        
+      - desktop-file-edit --set-key='Exec' --set-value='/app/bin/etl.sh +connect %u'
+        /app/share/applications/com.etlegacy.ETLegacy.desktop
       - "desktop-file-edit --set-key='Name' --set-value='ET: Legacy' /app/share/applications/com.etlegacy.ETLegacy.desktop"
       # Mesa Zink messing about
-      - "echo -e '\n[Desktop Action zink]\nName=Vulkan (Mesa 3D Zink)\nExec=env MESA_LOADER_DRIVER_OVERRIDE=zink /app/bin/etl.sh +connect %u' >> /app/share/applications/com.etlegacy.ETLegacy.desktop"
-      - "desktop-file-edit --set-key='Actions' --set-value='zink' /app/share/applications/com.etlegacy.ETLegacy.desktop"
+      - "echo -e '\n[Desktop Action zink]\nName=Vulkan (Mesa 3D Zink)\nExec=env MESA_LOADER_DRIVER_OVERRIDE=zink\
+        \ /app/bin/etl.sh +connect %u' >> /app/share/applications/com.etlegacy.ETLegacy.desktop"
+      - desktop-file-edit --set-key='Actions' --set-value='zink' /app/share/applications/com.etlegacy.ETLegacy.desktop
+      # Fix outdated metainfo tag
+      # https://github.com/etlegacy/etlegacy/issues/2507
+      - sed -i '35d;36d;37d;38d' /app/share/metainfo/com.etlegacy.ETLegacy.metainfo.xml
     sources:
       - type: file
-        url: https://www.etlegacy.com/download/file/554
-        sha256: ed8b4abb6e3cd13c1a3af2d7e4526ede260abee4afbdc6838210d742d98bdab5
+        url: https://www.etlegacy.com/download/file/579
+        sha256: 9ee1ea256d39f051caf1f0ac81c8aa9b9ebadb421bbd70fb04cc24bbd74416b6
         dest-filename: etl.tar.gz
       # This is just a canary. We don't build from source because that's not reasonable in our
       # case but we can use this repository to warn us when there is a release.
       - type: git
         url: https://github.com/etlegacy/etlegacy
         disable-submodules: true
-        commit: 956269f4c13ebe31ba2a0f0b805588383209bd5b
-        tag: v2.81.1
+        commit: fad3b23918bb623c555a110661fb0adac43c467d
+        tag: v2.82.0
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+)$
@@ -210,4 +215,5 @@ modules:
       - type: script
         dest-filename: etl.sh
         commands:
-          - exec /app/bin/etl +set fs_basepath /app/bin +set omnibot_path /app/bin/legacy/omni-bot "$@"
+          - exec /app/bin/etl +set fs_basepath /app/bin +set omnibot_path /app/bin/legacy/omni-bot
+            "$@"
