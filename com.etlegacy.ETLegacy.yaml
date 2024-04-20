@@ -157,9 +157,6 @@ modules:
       - "echo -e '\n[Desktop Action zink]\nName=Vulkan (Mesa 3D Zink)\nExec=env MESA_LOADER_DRIVER_OVERRIDE=zink\
         \ /app/bin/etl.sh +connect %u' >> /app/share/applications/com.etlegacy.ETLegacy.desktop"
       - desktop-file-edit --set-key='Actions' --set-value='zink' /app/share/applications/com.etlegacy.ETLegacy.desktop
-      # Fix outdated metainfo tag
-      # https://github.com/etlegacy/etlegacy/issues/2507
-      - sed -i '35d;36d;37d;38d' /app/share/metainfo/com.etlegacy.ETLegacy.metainfo.xml
     sources:
       - type: file
         url: https://www.etlegacy.com/download/file/592
