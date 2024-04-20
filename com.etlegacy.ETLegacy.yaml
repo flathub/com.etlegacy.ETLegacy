@@ -162,8 +162,8 @@ modules:
       - sed -i '35d;36d;37d;38d' /app/share/metainfo/com.etlegacy.ETLegacy.metainfo.xml
     sources:
       - type: file
-        url: https://www.etlegacy.com/download/file/579
-        sha256: 9ee1ea256d39f051caf1f0ac81c8aa9b9ebadb421bbd70fb04cc24bbd74416b6
+        url: https://www.etlegacy.com/download/file/592
+        sha256: 66f352c83cbcff33857e9be3f422977307f565ae09839bf21bbbe90e7cdcb443
         dest-filename: etl.tar.gz
       # This is just a canary. We don't build from source because that's not reasonable in our
       # case but we can use this repository to warn us when there is a release.
