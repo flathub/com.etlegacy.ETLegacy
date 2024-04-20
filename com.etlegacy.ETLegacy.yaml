@@ -157,21 +157,18 @@ modules:
       - "echo -e '\n[Desktop Action zink]\nName=Vulkan (Mesa 3D Zink)\nExec=env MESA_LOADER_DRIVER_OVERRIDE=zink\
         \ /app/bin/etl.sh +connect %u' >> /app/share/applications/com.etlegacy.ETLegacy.desktop"
       - desktop-file-edit --set-key='Actions' --set-value='zink' /app/share/applications/com.etlegacy.ETLegacy.desktop
-      # Fix outdated metainfo tag
-      # https://github.com/etlegacy/etlegacy/issues/2507
-      - sed -i '35d;36d;37d;38d' /app/share/metainfo/com.etlegacy.ETLegacy.metainfo.xml
     sources:
       - type: file
-        url: https://www.etlegacy.com/download/file/579
-        sha256: 9ee1ea256d39f051caf1f0ac81c8aa9b9ebadb421bbd70fb04cc24bbd74416b6
+        url: https://www.etlegacy.com/download/file/592
+        sha256: 66f352c83cbcff33857e9be3f422977307f565ae09839bf21bbbe90e7cdcb443
         dest-filename: etl.tar.gz
       # This is just a canary. We don't build from source because that's not reasonable in our
       # case but we can use this repository to warn us when there is a release.
       - type: git
         url: https://github.com/etlegacy/etlegacy
         disable-submodules: true
-        commit: fad3b23918bb623c555a110661fb0adac43c467d
-        tag: v2.82.0
+        commit: 0a24c70f84cf21940277ddabd736ce83535cb794
+        tag: v2.82.1
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+)$
