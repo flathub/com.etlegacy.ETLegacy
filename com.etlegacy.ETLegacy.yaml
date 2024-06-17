@@ -119,6 +119,13 @@ modules:
         url: https://downloads.sourceforge.net/project/glew/glew/2.2.0/glew-2.2.0.tgz
         sha256: d4fc82893cfb00109578d0a1a2337fb8ca335b3ceccf97b97e5cc7f08e4353e1
 
+  - name: fex
+    buildsystem: cmake-ninja
+    sources:
+      - type: archive
+        url: https://github.com/FEX-Emu/FEX/archive/refs/tags/FEX-2406.tar.gz
+        sha256: 9c508cef897c35ad2c04a7ca2d6378abfce659336b567ea2703b3038c7ad21a7    
+
   - name: etlegacy
     buildsystem: simple
     build-commands:
