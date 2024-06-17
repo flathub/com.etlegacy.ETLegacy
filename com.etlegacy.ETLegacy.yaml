@@ -121,6 +121,8 @@ modules:
 
   - name: box86
     buildsystem: cmake-ninja
+      arch:
+        x86_64: *compat_i386_opts
     sources:
       - type: archive
         url: https://github.com/ptitSeb/box86/archive/refs/tags/v0.3.6.tar.gz
