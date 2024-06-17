@@ -121,6 +121,7 @@ modules:
 
   - name: box86
     buildsystem: cmake-ninja
+    build-options:
       arch:
         x86_64: *compat_i386_opts
     sources:
