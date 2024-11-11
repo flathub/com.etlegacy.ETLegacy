@@ -159,16 +159,16 @@ modules:
       - desktop-file-edit --set-key='Actions' --set-value='zink' /app/share/applications/com.etlegacy.ETLegacy.desktop
     sources:
       - type: file
-        url: https://www.etlegacy.com/download/file/675
-        sha256: bb049b5f5bf4a17a8f42d38130b7dc83120b7f658761ddb339fd93c35f7453b8
+        url: https://www.etlegacy.com/download/file/687
+        sha256: da9959fd45066ac4ab4b94966e842ffbb231c89149bfa5157272a7b7267130cf
         dest-filename: etl.tar.gz
       # This is just a canary. We don't build from source because that's not reasonable in our
       # case but we can use this repository to warn us when there is a release.
       - type: git
         url: https://github.com/etlegacy/etlegacy
         disable-submodules: true
-        commit: eb5b8282f469935c2077a6b70c861f04f272c7dd
-        tag: v2.83.0
+        commit: e8d0ec06800630fd458791ccd29ed488e04648d9
+        tag: v2.83.1
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+)$
@@ -205,7 +205,7 @@ modules:
   - name: metadata
     buildsystem: simple
     build-commands:
-      # Install file with extra base-path reference for people that start 
+      # Install file with extra base-path reference for people that start
       # ETL from the commandline
       - install -Dm744 etl.sh -t /app/bin/
     sources:
