@@ -159,16 +159,16 @@ modules:
       - desktop-file-edit --set-key='Actions' --set-value='zink' /app/share/applications/com.etlegacy.ETLegacy.desktop
     sources:
       - type: file
-        url: https://www.etlegacy.com/download/file/687
-        sha256: da9959fd45066ac4ab4b94966e842ffbb231c89149bfa5157272a7b7267130cf
+        url: https://www.etlegacy.com/download/file/702
+        sha256: 9da86ed0beb58b06175f45cf872fa00a7f5134daf7ac7e4390557972964ea14f
         dest-filename: etl.tar.gz
       # This is just a canary. We don't build from source because that's not reasonable in our
       # case but we can use this repository to warn us when there is a release.
       - type: git
         url: https://github.com/etlegacy/etlegacy
         disable-submodules: true
-        commit: e8d0ec06800630fd458791ccd29ed488e04648d9
-        tag: v2.83.1
+        commit: d14218a47b5f7fbde9ce753184e02ed170f8849d
+        tag: v2.83.2
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+)$
