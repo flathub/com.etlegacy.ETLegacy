@@ -18,6 +18,15 @@ For all the other benefits of a Flatpak, you can see the full documentation:
 
 All personal configuration and downloads are stored in:
 
-```~/.var/app/com.etlegacy.ETLegacy/.etlegacy```
+```
+~/.var/app/com.etlegacy.ETLegacy/.etlegacy
+```
 
 Here you can find your `etconfig.cfg`, mods, and downloads. ET: Legacy runs fully sandboxed so it can't access any of your files in your Home directory. If you wish to change the default sandbox permissions, I recommend [Flatseal](https://flathub.org/apps/details/com.github.tchx84.Flatseal).
+
+## Mirrors
+
+File mirrors
+
+- https://filebase.trackbase.net/et/full/et260b.x86_full.zip
+- https://elitearmy.gg/et/et260b.x86_full.zip
