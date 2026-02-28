@@ -36,6 +36,7 @@ finish-args:
   - --share=network
   - --device=dri
   - --allow=multiarch
+  - --allow=devel
 
   - --persist=.etlegacy
 
@@ -139,6 +140,8 @@ modules:
       - cp -r ./etlegacy-*-i386/licenses /app/share/licenses
       - cp -r ./etlegacy-*-i386/man /app/share/man
       - cp -r ./etlegacy-*-i386/metainfo /app/share/metainfo
+      - sed -i '/<\/component>/i \ \ <url type="vcs-browser">https:\/\/github.com\/etlegacy\/etlegacy<\/url>'
+        /app/share/metainfo/com.etlegacy.ETLegacy.metainfo.xml
       - cp -r ./etlegacy-*-i386/mime /app/share/mime
       # Rename mime-type controller
       - mv /app/share/mime/packages/etlegacy.xml /app/share/mime/packages/com.etlegacy.ETLegacy.xml
