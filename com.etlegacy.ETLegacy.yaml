@@ -36,6 +36,7 @@ finish-args:
   - --share=network
   - --device=dri
   - --allow=multiarch
+  - --allow=devel
 
   - --persist=.etlegacy
 
