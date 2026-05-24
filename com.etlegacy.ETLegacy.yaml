@@ -45,6 +45,7 @@ finish-args:
 cleanup:
   - /include
   - /lib/cmake
+  - /lib/include
   - /lib/pkgconfig
   - /share/gtk-doc
   - /share/man
