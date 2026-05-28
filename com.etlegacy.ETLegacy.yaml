@@ -1,6 +1,6 @@
 app-id: com.etlegacy.ETLegacy
 runtime: org.freedesktop.Platform
-runtime-version: '24.08'
+runtime-version: '25.08'
 sdk: org.freedesktop.Sdk
 
 # 64bit is currently unfunctional. Upsteam is aware of this,
@@ -45,6 +45,7 @@ finish-args:
 cleanup:
   - /include
   - /lib/cmake
+  - /lib/include
   - /lib/pkgconfig
   - /share/gtk-doc
   - /share/man
@@ -55,17 +56,17 @@ cleanup:
 add-extensions:
   org.freedesktop.Platform.Compat.i386:
     directory: lib/i386-linux-gnu
-    version: '23.08'
+    version: '25.08'
 
   org.freedesktop.Platform.Compat.i386.Debug:
     directory: lib/debug/lib/i386-linux-gnu
-    version: '23.08'
+    version: '25.08'
     no-autodownload: true
 
   org.freedesktop.Platform.GL32:
     directory: lib/i386-linux-gnu/GL
     version: '1.4'
-    versions: 23.08;1.4
+    versions: 25.08;1.4
     subdirectories: true
     no-autodownload: true
     autodelete: false
@@ -159,16 +160,16 @@ modules:
       - desktop-file-edit --set-key='Actions' --set-value='zink' /app/share/applications/com.etlegacy.ETLegacy.desktop
     sources:
       - type: file
-        url: https://www.etlegacy.com/download/file/702
-        sha256: 9da86ed0beb58b06175f45cf872fa00a7f5134daf7ac7e4390557972964ea14f
+        url: https://www.etlegacy.com/download/file/716
+        sha256: a446d5a374214f3adadc373b33ddfd9448c736eb56f15dc04fa34711bfb3cace
         dest-filename: etl.tar.gz
       # This is just a canary. We don't build from source because that's not reasonable in our
       # case but we can use this repository to warn us when there is a release.
       - type: git
         url: https://github.com/etlegacy/etlegacy
         disable-submodules: true
-        commit: d14218a47b5f7fbde9ce753184e02ed170f8849d
-        tag: v2.83.2
+        commit: 764ffc00a953e59aaf435272d004c49a89710309
+        tag: v2.84.0
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+)$
