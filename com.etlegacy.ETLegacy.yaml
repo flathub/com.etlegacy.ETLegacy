@@ -168,8 +168,8 @@ modules:
       - type: git
         url: https://github.com/etlegacy/etlegacy
         disable-submodules: true
-        commit: 764ffc00a953e59aaf435272d004c49a89710309
-        tag: v2.84.0
+        commit: 9096862becc90f2c6736542b209ee1a506e0ad23
+        tag: v2.86.0
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+)$
